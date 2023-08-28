@@ -1,5 +1,4 @@
 from collections.abc import Callable, Iterable, Mapping
-# from lib2to3.pgen2.driver import Driver
 import time
 import threading
 from typing import Any
@@ -11,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-delay = 2
+delay = 2 # 2 segundos
 button = Button.left
 start_stopKey = KeyCode.from_char('a')
 stopKey = KeyCode.from_char('b')
@@ -21,7 +20,7 @@ class Click(threading.Thread):
         super(Click, self).__init__()
         self.delay = delay
         self.driver = driver
-        self.running = threading.Event()  # Usado para controlar a execução do thread
+        self.running = threading.Event()
         self.running.set()  # Inicializa como True
         self.button = button
         # self.running = True
@@ -29,11 +28,11 @@ class Click(threading.Thread):
 
     def start_click(self):
         # self.running = True
-        self.running.set()  # Define o evento como True para iniciar os cliques
+        self.running.set()
         
     def stop_click(self):
         # self.running = False
-        self.running.clear()  # Limpa o evento para parar os cliques
+        self.running.clear()
         
     def exit(self):
         self.stop_click()
