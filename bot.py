@@ -26,11 +26,9 @@ class Click(threading.Thread):
         self.programRun = True
 
     def start_click(self):
-        # self.running = True
         self.running.set()
         
     def stop_click(self):
-        # self.running = False
         self.running.clear()
         
     def exit(self):
