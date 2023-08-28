@@ -23,7 +23,6 @@ class Click(threading.Thread):
         self.running = threading.Event()
         self.running.set()  # Inicializa como True
         self.button = button
-        # self.running = True
         self.programRun = True
 
     def start_click(self):
